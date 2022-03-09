@@ -19,6 +19,7 @@ class UsersList extends Component {
       users: [],
     };
   }
+
   handleDelete = (userToDelete) => {
     this.setState((oldState) => {
       return {

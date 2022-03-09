@@ -2,9 +2,12 @@ import React, { Component } from "react";
 import AddUserModal from "./AddUserModal";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
-import Typography from "@mui/material/Typography";
+import DeleteIcon from "@mui/icons-material/Delete";
+import SendIcon from "@mui/icons-material/Send";
+import Stack from "@mui/material/Stack";
 import Modal from "@mui/material/Modal";
 import "../styles/AddUser.css";
+
 class AddUser extends Component {
   state = {
     open: false,
@@ -30,14 +33,20 @@ class AddUser extends Component {
           <Button style={{ backgroundColor: "white", color: "#376AA6", fontWeight: "bold", fontSize: "1.2rem" }} variant="contained" onClick={this.handleOpen}>
             + Add User
           </Button>
-          <Modal open={this.state.open} onClose={this.handleClose} aria-labelledby="modal-modal-title" aria-describedby="modal-modal-description">
-            <Box sx={style}>
-              <Typography id="modal-modal-title" variant="h6" component="h2">
-                Add User's data
-              </Typography>
-              <Typography id="modal-modal-description" sx={{ mt: 2 }}>
-                <AddUserModal />
-              </Typography>
+          <Modal open={this.state.open} onClose={this.state.handleClose} aria-labelledby="parent-modal-title" aria-describedby="parent-modal-description">
+            <Box sx={{ ...style, width: 400 }}>
+              <p id="parent-modal-description" style={{ fontSize: "1.2rem", fontWeight: "bold" }}>
+                Enter user's data
+              </p>
+              <AddUserModal />
+              <Stack style={{ display: "flex", justifyContent: "flex-end" }} direction="row" spacing={2}>
+                <Button color="success" variant="contained" endIcon={<SendIcon />}>
+                  Send
+                </Button>
+                <Button color="error" onClick={this.handleClose} variant="outlined" startIcon={<DeleteIcon />}>
+                  Cancel
+                </Button>
+              </Stack>
             </Box>
           </Modal>
         </div>
