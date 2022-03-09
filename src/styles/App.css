@@ -1,0 +1,30 @@
+.App-nav {
+  font-family: Roboto;
+  display: flex;
+  font-weight: bold;
+  background-color: white;
+  justify-content: space-between;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.57);
+  font-size: 1.2rem;
+}
+.App-nav-Logo {
+  color: orange;
+  margin-left: 4rem;
+  padding: 20px;
+}
+.App-nav-navs {
+  margin-right: 2rem;
+  padding: 20px;
+}
+.App-nav-navs span {
+  margin-right: 1.5rem;
+  padding: 6px 8px 6px 8px;
+  border-radius: 5px;
+}
+.App-nav-navs span:hover {
+  margin-right: 1.5rem;
+  cursor: pointer;
+  transition: 0.3s;
+  opacity: 0.8;
+  background-color: rgb(231, 231, 231);
+}

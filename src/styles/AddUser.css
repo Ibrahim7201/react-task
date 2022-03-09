@@ -1,0 +1,12 @@
+.Adduser {
+  display: flex;
+  padding: 20px;
+  color: white;
+  background-color: #376aa6;
+  font-size: 1.5rem;
+  align-items: center;
+  justify-content: center;
+}
+.Adduser-title {
+  margin-right: 55rem;
+}
