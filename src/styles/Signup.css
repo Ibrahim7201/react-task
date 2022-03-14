@@ -1,0 +1,13 @@
+.Signup {
+  display: flex;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.57);
+  width: 450px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+.Signup-box {
+  text-align: center;
+}

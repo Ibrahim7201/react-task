@@ -1,0 +1,12 @@
+.Details {
+  color: black;
+  text-decoration: none;
+  margin-right: 10px;
+  padding: 5px 10px 5px 10px;
+  border: solid 1px black;
+  transition: 0.3s;
+}
+.Details:hover {
+  background-color: black;
+  color: white;
+}

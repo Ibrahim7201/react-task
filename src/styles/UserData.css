@@ -1,0 +1,17 @@
+.flexing {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.User-data {
+  margin-top: 30px;
+  padding: 20px 10px 20px 10px;
+  width: 400px;
+  text-align: left;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.57);
+}
+.User-data h1 {
+  font-weight: bold;
+  margin-bottom: 10px;
+}

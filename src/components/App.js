@@ -1,33 +1,36 @@
 import React, { Component } from "react";
-import About from "./About";
-import Container from "@mui/material/Container";
-import UsersList from "./UsersList";
-import { Route, Routes, NavLink } from "react-router-dom";
+import Navbar from "../components/Navbar";
+import SignUpPage from "../pages/SignUpPage";
+import LoginPage from "../pages/LoginPage";
+import UsersPage from "../pages/UsersPage";
+import MissingPage from "../pages/MissingPage";
+import UserPage from "../pages/UserPage";
+import UnauthorizedPage from "../pages/UnauthorizedPage.jsx";
+import Layout from "../pages/Layout";
+import RequireAuth from "../components/RequireAuth";
+import AddUserModal from "../components/AddUserModal";
+
+import { Route, Routes } from "react-router-dom";
 import "../styles/App.css";
 export default class App extends Component {
   render() {
     return (
-      // <Container maxWidth="xl">
       <div className="App">
-        <nav className="App-nav">
-          <div className="App-nav-Logo">
-            <span>LOGO</span>
-          </div>
-          <div className="App-nav-navs">
-            <span>Packages</span>
-            <span>Offers</span>
-            <span>Contact Us</span>
-            <span>Currency($)</span>
-            <span>Language (EN)</span>
-            <span>Sign in</span>
-            <span>Sign Up</span>
-          </div>
-        </nav>
-        <Routes className="App-Routes">
-          <Route path="/" element={<UsersList />} />
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route path="unauthorized" element={<UnauthorizedPage />} />
+            <Route path="login" element={<LoginPage />} />
+            <Route path="signup" element={<SignUpPage />} />
+            <Route path="*" element={<MissingPage />} />
+            <Route element={<RequireAuth allowedRoles={{ role: ["user"] }} />}>
+              <Route path="users" element={<UsersPage />} />
+              <Route path="users/:user" element={<UserPage />} />
+            </Route>
+          </Route>
         </Routes>
+        <AddUserModal />
       </div>
-      //  </Container>
     );
   }
 }
