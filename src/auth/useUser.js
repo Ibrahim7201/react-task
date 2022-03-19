@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react";
-import { useToken } from "./useToken";
+import { useState, useEffect } from 'react';
+import { useToken } from './useToken';
 
 export const useUser = () => {
   const [token] = useToken();
   const getPayLoadFromToken = (token) => {
-    const encodedPayLoad = token.split(".")[1];
+    const encodedPayLoad = token.split('.')[1];
     return JSON.parse(atob(encodedPayLoad));
   };
   const [user, setUser] = useState(() => {

@@ -1,16 +1,16 @@
-import React, { Component, memo } from "react";
-import "../styles/UserList.css";
-import User from "./User";
-import AddUser from "./AddUser";
-import { AuthContext } from "../contexts/AuthProvider";
+import React, { Component, memo } from 'react';
+import '../styles/UserList.css';
+import User from './User';
+import AddUser from './AddUser';
+import { AuthContext } from '../contexts/AuthProvider';
 /////////////////////////////////
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableContainer from '@mui/material/TableContainer';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+import Paper from '@mui/material/Paper';
 /////////////////////////////////////
 
 class UsersList extends Component {
@@ -38,7 +38,11 @@ class UsersList extends Component {
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  <User handleUserData={this.handleUserData} handleDelete={this.handleDelete} users={this.context.data.users} />
+                  <User
+                    handleUserData={this.handleUserData}
+                    handleDelete={this.handleDelete}
+                    users={this.context.data.users}
+                  />
                 </TableBody>
               </Table>
             </TableContainer>
